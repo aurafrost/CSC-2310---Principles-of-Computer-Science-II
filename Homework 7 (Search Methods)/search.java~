@@ -1,0 +1,124 @@
+//Jimmy Tran
+import java.util.*;
+
+public class search
+{
+  public static void Seq_search(int[]a, int target)
+  {
+    double start = System.nanoTime();
+    for(int i = 0; i < a.length;i++)
+    {
+      if(a[i] == target)
+      {
+        double searchTime = (System.nanoTime()-start)/1000000000;
+        System.out.println("Sequential search time for " + target + ": " + searchTime + " seconds.");
+        i=a.length-1;
+        break;
+      }
+      else
+      {
+        if(i==a.length-1 && a[a.length-1]!=target)
+        {
+          double searchTime = (System.nanoTime()-start)/1000000000;
+          System.out.println("Target not in array. Sequential search time for "+target+": "+searchTime+" seconds.");
+        }
+      }
+    }
+  }
+  
+  public static void Bin_search(int[]b, int target)
+  {
+    int max = b.length-1;
+    int min = 0;
+    boolean found = false;
+    while(min <= max)
+    {
+      int mid = (max+min)/2;
+      if(target > b[mid])
+      {
+        min = mid + 1;
+      }
+      else
+      {
+        if(target < b[mid])
+        {
+          max = mid - 1;
+        }
+        else
+        {
+          if(b[mid]==target)
+          {
+            System.out.print("Binary search time for " + target + ": ");
+            found = true;
+            break;
+          }
+        }
+      }
+    }
+    if(found==false)
+    {
+      System.out.print("Target not in array. Binary search time for " + target + ": ");
+    }
+  }
+  
+  public static void main(String [] args)
+  {
+    //sets size of the arrays, only allowing values of 100 or higher
+    Scanner keyboard = new Scanner(System.in);
+    int size = 0;
+    while(size<=100)
+    {size = keyboard.nextInt();}
+    
+    //initializes and sets random values from 1-99 into array a
+    int [] a = new int [size];
+    for(int i = 0; i < size; i++)
+    {a[i] = (int) Math.ceil(Math.random()*99);}
+    
+    //initializes and sets random values from 1-99 into array b
+    int [] b = new int [size];
+    for(int i = 0; i < size; i++)
+    {b[i] = (int) Math.ceil(Math.random()*99);}
+    
+    //initializes and sets random values from 1-99 into array c
+    int [] c = new int [size];
+    for(int i = 0; i < size; i++)
+    {c[i] = (int) Math.ceil(Math.random()*99);}
+    
+    //call the seq_search method three times on array a
+    System.out.println("Sequential Searches for 1, 50, and 100:");
+    Seq_search(a,1);
+    Seq_search(a,50);
+    Seq_search(a,100);
+    System.out.println();
+    
+    //sorts array b while timing
+    System.out.println("Binary Searches for 1, 50, and 100:");
+    double sortStart = System.nanoTime();
+    Arrays.sort(b);
+    double sortTime = (System.nanoTime()-sortStart)/1000000000;
+    
+    //times and calls the bin_search method three times
+    //bin_search for 1
+    double searchStart = System.nanoTime();
+    Bin_search(b,1);
+    double totalTime = (System.nanoTime()-searchStart)/1000000000+sortTime;
+    System.out.println(totalTime+" seconds.");
+    //bin_search for 50
+    searchStart = System.nanoTime();
+    Bin_search(b,50);
+    totalTime = (System.nanoTime()-searchStart)/1000000000+sortTime;
+    System.out.println(totalTime+" seconds.");
+    //bin_search for 100
+    searchStart = System.nanoTime();
+    Bin_search(b,100);
+    totalTime = (System.nanoTime()-searchStart)/1000000000+sortTime;
+    System.out.println(totalTime+" seconds.");
+    System.out.println();
+    
+    //sorts array c while timing
+    System.out.println("Recursive Binary Searches for 1, 50, and 100:");
+    sortStart = System.nanoTime();
+    Arrays.sort(c);
+    sortTime = (System.nanoTime()-sortStart)/1000000000;
+  }
+}

@@ -1,0 +1,12 @@
+import java.*;
+
+public class TennisPlayer extends SportsPlayer
+{
+  protected TennisPlayer(String name, int number, String salary)
+  {
+    super(name, number, salary);
+    name = "Michael Jordan";
+    number = 12;
+    salary = "$90 million";
+  }
+}

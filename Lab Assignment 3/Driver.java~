@@ -1,0 +1,12 @@
+import java.util.*;
+public class Driver
+{
+  public static void main(String[]args)
+  {
+    ArrayList <Integer> a = new ArrayList <> (size);
+    ArrayList <Integer> b = new ArrayList <> (size);
+    ArrayList <Integer> c = new ArrayList <> ();
+    Combine s = new Combine(a, b);
+    System.out.println(c)
+  }
+}

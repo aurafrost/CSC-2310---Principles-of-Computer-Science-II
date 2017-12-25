@@ -1,0 +1,60 @@
+import java.*;
+
+public class BasketballPlayer extends SportsPlayer
+{
+  protected String height;
+  protected int points;
+  protected int rebounds;
+  protected int assists;
+  protected BasketballPlayer(String name, int number, String salary, String height, int points, int rebounds, int assists)
+  {
+    super(name, number, salary);
+    this.name = name;
+    this.number = number;
+    this.salary = salary;
+    this.height = height;
+    this.points = points;
+    this.rebounds = rebounds;
+    this.assists = assists;
+  }
+  
+  protected void setHeight(String height)
+  {
+    this.height = height;
+  }
+  
+  protected String getHeight()
+  {
+    return height;
+  }
+  
+  protected void setPoints(int points)
+  {
+    this.points = points;
+  }
+  
+  protected int getPoints()
+  {
+    return points;
+  }
+  
+  protected void setRebounds(int rebounds)
+  {
+    this.rebounds = rebounds;
+  }
+  
+  protected int getRebounds()
+  {
+    return rebounds;
+  }
+  
+  protected void setAssists(int assists)
+  {
+    this.assists = assists;
+  }
+  
+  protected int getAssists()
+  {
+    return assists;
+  }
+}

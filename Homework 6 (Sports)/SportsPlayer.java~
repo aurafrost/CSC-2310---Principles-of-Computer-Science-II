@@ -1,0 +1,44 @@
+import java.*;
+
+public class SportsPlayer
+{
+  protected String name;
+  protected int number;
+  protected String salary;
+  protected SportsPlayer(String name, int number, String salary)
+  {
+    this.name = name;
+    this.number = number;
+    this.salary = salary;
+  }
+  
+  protected void setName(String name)
+  {
+    this.name = name;
+  }
+  
+  protected String getName()
+  {
+    return name;
+  }
+  
+  protected void setNumber(int number)
+  {
+    this.number = number;
+  }
+  
+  protected int getNumber()
+  {
+    return number;
+  }
+  
+  protected void setSalary(String salary)
+  {
+    this.salary = salary;
+  }
+  
+  protected String getSalary()
+  {
+    return salary;
+  }
+}

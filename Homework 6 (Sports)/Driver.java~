@@ -1,0 +1,45 @@
+import java.util.*;
+
+public class Driver
+{
+  public static void main(String[]args)
+  {
+    //sets keyboard for input
+    Scanner keyboard = new Scanner(System.in);
+    
+    //initializes a vaiable that reverts to default setting if user does not input a valid variable.
+    String answer = "N/A";
+    
+    //asks for user input of sport type and repeats outputs if input is invalid
+    while(answer.equalsIgnoreCase("N/A"))
+    {
+      System.out.println("My favorite sports player play basketball, soccer, and tennis.");
+      System.out.println("Which of my favorite sports players would you like to know about?");
+      System.out.println("Enter the corresponding sport (Basketball, Soccer, or Tennis).");
+      answer = keyboard.nextLine();
+      //checks which sport was entered, initializes the subclass, and prints out stats of the sports player
+      //otherwise sets answer back to default and loops the program
+      if(answer.equalsIgnoreCase("Basketball"))
+      {
+        BasketballPlayer player = new BasketballPlayer("Michael Jordan",12,"$1,030,000","6\'6\"",32292,6672,5633);
+        System.out.println("Favorite Player Name: " + player.getName());
+        System.out.println("Jersey Number: " + player.getNumber());
+        System.out.println("Salary: " + player.getSalary());
+        System.out.println("Height: " + player.getHeight());
+        System.out.println("Points Scored: " + player.getPoints());
+        System.out.println("Rebounds: " + player.getRebounds());
+        System.out.println("Assists: " + player.getAssists());
+      }
+      else if(answer.equalsIgnoreCase("Soccer"))
+      {
+      }
+      else if(answer.equalsIgnoreCase("Tennis"))
+      {
+      }
+      else
+      {
+        answer = "N/A";
+      }
+    }
+  }
+}

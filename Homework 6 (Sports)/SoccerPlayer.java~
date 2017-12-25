@@ -1,0 +1,24 @@
+import java.*;
+
+public class SoccerPlayer extends SportsPlayer
+{
+  protected int points;
+  protected SoccerPlayer(String name, int number, String salary, int points)
+  {
+    super(name, number, salary);
+    name = "Michael Jordan";
+    number = 12;
+    salary = "$90 million";
+    this.points = points;
+  }
+
+  protected void setPoints(int points)
+  {
+    this.points = points;
+  }
+  
+  protected int getPoints()
+  {
+    return points;
+  }
+}

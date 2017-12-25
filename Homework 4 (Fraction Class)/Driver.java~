@@ -1,0 +1,37 @@
+import java.util.Scanner; //allows keyboard to be imported for use
+
+public class Driver {
+  
+  public static void main(String[]args) {
+    Scanner keyboard = new Scanner(System.in); //allows user keyboard input
+    String repeat = "YES";
+
+    while(repeat.equals("YES")){
+      System.out.println("Enter numerator of fraction one:"); //prompts for the numerator of fraction one
+      int a = keyboard.nextInt();
+    
+      System.out.println("Enter denominator of fraction one:"); //prompts for denominator of fraction one
+      int b = keyboard.nextInt();
+    
+      System.out.println("Enter numerator of fraction two:"); //prompts for the numerator of fraction two
+      int c = keyboard.nextInt();
+    
+      System.out.println("Enter denominator of fraction two:"); //prompts for denominator of fraction two
+      int d = keyboard.nextInt();
+    
+      Fraction f1 = new Fraction(a,b); //instantiates two fractions using the given ints
+      Fraction f2 = new Fraction(c,d);
+    
+      System.out.println("The two fractions are: " + a + "/" + b + " and " + c + "/" + d); //returns the two fractions
+      System.out.println("The two fractions added equal: " + f1.addFrac(f2)); //returns the added fraction
+      System.out.println("The two fractions subtracted equal: " + f1.subtractFrac(f2)); //returns the difference in fractions
+      System.out.println("The two fractions multiplied equal: " + f1.multiplyFrac(f2)); //returns the multiplied fraction
+      System.out.println("The two fractions divided equal: " + f1.divideFrac(f2)); //returns the divided fraction
+    
+      System.out.println("Run program again? (YES or NO)"); //prompts user for repeating the program
+      if (keyboard.next().equalsIgnoreCase("NO")){ //the requirements only stated that the program should end if the user inputs "no". Therefore, any other input will repeat the program.
+        repeat = "NO";
+      }
+    }
+  }
+}
